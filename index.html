@@ -39,7 +39,12 @@ you should enter here
 <!-- user interface ends -->
    
 <script type="text/javascript">
-  
+  document.getElementById('textareaAfter').addEventListener('input', function(){
+   this.value = this.value.replace(/(\r\n|\n|\r)/gm, "");
+})
+document.getElementById('textareaBefore').addEventListener('input', function(){
+   this.value = this.value.replace(/(\r\n|\n|\r)/gm, "");
+})
 // events
   
 function buttonCompareClicked()
@@ -547,7 +552,7 @@ function TextPassagePair(doPassagesMatch, passages)
             ">", "&gt;"
         ).replace
         (
-            "\n", "<br />"
+            "\n", "&amp; "
         );
  
         return returnValue;
