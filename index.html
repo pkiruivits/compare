@@ -14,21 +14,18 @@
       <div class="col">
         <label>First string:</label>
         <br />
-        <textarea id="textareaBefore" cols="60" rows="10">
-you should enter here
-        </textarea>
+        <textarea id="textareaBefore" cols="60" rows="10"></textarea>
       </div>
       <div class="col">
         <label>Second string:</label>
         <br />
-        <textarea id="textareaAfter" cols="60" rows="10">
- enter here
-        </textarea>
+        <textarea id="textareaAfter" cols="60" rows="10"></textarea>
       </div>
     </div>
     
   
     <button id="buttonCompare" onclick="buttonCompareClicked();">Compare</button>
+    <button id="buttonclear" onclick="buttonclear();">Clear</button>
   
     <div>
         <label>Differences:</label>
@@ -39,14 +36,12 @@ you should enter here
 <!-- user interface ends -->
    
 <script type="text/javascript">
-  document.getElementById('textareaAfter').addEventListener('input', function(){
-   this.value = this.value.replace(/(\r\n|\n|\r)/gm, "");
-})
-document.getElementById('textareaBefore').addEventListener('input', function(){
-   this.value = this.value.replace(/(\r\n|\n|\r)/gm, "");
-})
+
 // events
-  
+  function buttonclear(){
+    document.getElementById("textareaBefore").value='';
+    document.getElementById("textareaAfter").value='';
+  }
 function buttonCompareClicked()
 {      
     var textBefore = document.getElementById("textareaBefore").value;
