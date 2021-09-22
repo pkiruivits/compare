@@ -38,12 +38,16 @@
 <script type="text/javascript">
 document.getElementById('textareaBefore').addEventListener('input', function(){
    this.value = this.value.replace(/(\r\n|\n|\r)/gm, " ");
+   this.value = this.value.replace(/ {2,}/g, ' ');
+   this.value = this.value.replace(/  +/g, " ");
+   this.value = this.value.replace(/\u2013|\u2014/g, "-");
 })
 document.getElementById('textareaAfter').addEventListener('input', function(){
    this.value = this.value.replace(/(\r\n|\n|\r)/gm, " ");
-   this.value = this.value.replace(/ {2,}/g, ' ');
-})
-// events
+   this.value = this.value.replace(/ {2,}/g, " ");
+   this.value = this.value.replace(/  +/g, " ");
+   this.value = this.value.replace(/\u2013|\u2014/g, "-");
+})// events
   function buttonclear(){
     document.getElementById("textareaBefore").value='';
     document.getElementById("textareaAfter").value='';
